@@ -23,15 +23,13 @@ public class LogicaVida : MonoBehaviour
         updatevida();
         if (vidactual <= 0)
         {
-            gameObject.SetActive(false);
-            
             Gameover();
         }
 
     }
     public void Gameover()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(0);
     }
 
     public void updatevida()
@@ -41,7 +39,7 @@ public class LogicaVida : MonoBehaviour
 
     public void RestarVida(int cantidad)
     {
-        if (!hit && vidactual > 0)
+        if (!hit && vidactual >= 0)
         {
             vidactual -= cantidad;
             StartCoroutine(Hitime());
